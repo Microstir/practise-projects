@@ -1,40 +1,45 @@
 body {
     background: url("https://i.seadn.io/gae/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ?auto=format&w=3840");
-    background-position: cover;
-    margin: 0;
-    font-family: cursive;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    justify-content: center;
     background-size: cover;
-    text-align: center;
-    background-color: slateblue;
-    position: relative;
-}
-.btn {
-    background-color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: aliceblue;
+    font-family: sans-serif;
+  }
+  
+  .btn {
+    background-color: pink;
     padding: 20px 40px;
     border-radius: 5px;
-    opacity: .8;
-    box-shadow: 0 4px 8px rgba(red, green, blue, alpha);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     color: black;
-}
-.btn::before{
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .btn::before {
     content: "";
     position: absolute;
-    background-color: orange;
-    width: 20px;
-    height: 20px;
-    left: 50%;
-    right: 50%;
+    background-color: orangered;
+    width: 0;
+    height: 0;
+    left: var(--xPos);
+    top: var(--yPos);
     transform: translate(-50%, -50%);
     border-radius: 50%;
-}
-.btn:hover::before{
-    width: 50px;
-    height: 50px;
-    overflow: hidden;
-}
+    transition: width 0.5s, height 0.5s;
+  }
+  
+  .btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
